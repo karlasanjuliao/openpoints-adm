@@ -7,7 +7,8 @@ export type GetCampaignsRequest = {
 }
 
 export type GetAllCampaignsRequest = {
-    customerId: string
+    customerId?: string
+    own?: boolean
 }
 
 export type GetCampaignByIdRequest = {

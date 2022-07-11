@@ -359,7 +359,7 @@ export default function BookingList({
                     }}
                     localization={{
                         body: {
-                            emptyDataSourceMessage: 'Nào há dados.',
+                            emptyDataSourceMessage: 'Não há dados.',
                         },
                         toolbar: {
                             searchPlaceholder: 'Pesquisar...',

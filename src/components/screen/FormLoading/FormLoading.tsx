@@ -26,7 +26,7 @@ export default function FormLoadingComponent({ withText }: { withText?: boolean 
 
   return (
     <Backdrop
-      style={{ color: '#fff', zIndex: 9999 }}
+      style={{ color: '#fff', zIndex: 1300 }}
       open
     >
       <Box className={classes.loading}>

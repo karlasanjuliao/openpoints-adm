@@ -9,7 +9,7 @@ const CurrencyField = ({ onValueChange, id: fieldId, initialValue, ...props }) =
         if (initialValue) {
             setValue(initialValue * 100 * 100)
         }
-    }, [])
+    }, [initialValue])
 
     const handleChange = (v: any) => {
         setValue(parseFloat(v.value) * 100);
@@ -48,6 +48,7 @@ const CurrencyField = ({ onValueChange, id: fieldId, initialValue, ...props }) =
             decimalScale={2}
             customInput={TextField}
             onKeyDown={keyDown}
+            style={{ width: '100%' }}
         />
     );
 };

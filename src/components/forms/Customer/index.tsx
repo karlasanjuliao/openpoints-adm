@@ -168,7 +168,7 @@ export default function Customer() {
         <Paper className={classes.form} elevation={3}>
           <form noValidate onSubmit={formik.handleSubmit}>
             <Grid container alignItems="flex-start" spacing={2}>
-              <Grid item xs={12} lg={6}>
+              <Grid item xs={12} md={6}>
                 <TextField
                   color="secondary"
                   variant="outlined"
@@ -185,7 +185,7 @@ export default function Customer() {
                   helperText={formik.touched.socialName && formik.errors.socialName}
                 />
               </Grid>
-              <Grid item xs={12} lg={6}>
+              <Grid item xs={12} md={6}>
                 <TextField
                   color="secondary"
                   variant="outlined"
@@ -201,7 +201,7 @@ export default function Customer() {
                   helperText={formik.touched.name && formik.errors.name}
                 />
               </Grid>
-              <Grid item xs={12} lg={3}>
+              <Grid item xs={12} md={3}>
                 <InputMask
                   mask="99.999.999/9999-99"
                   color="secondary"
@@ -224,7 +224,7 @@ export default function Customer() {
                   )}
                 </InputMask>
               </Grid>
-              <Grid item xs={12} lg={9}>
+              <Grid item xs={12} md={9}>
                 <TextField
                   color="secondary"
                   variant="outlined"
@@ -240,7 +240,7 @@ export default function Customer() {
                   helperText={formik.touched.address && formik.errors.address}
                 />
               </Grid>
-              <Grid item xs={6} lg={3}>
+              <Grid item xs={6} md={3}>
                 <TextField
                   color="secondary"
                   variant="outlined"
@@ -256,7 +256,7 @@ export default function Customer() {
                   helperText={formik.touched.number && formik.errors.number}
                 />
               </Grid>
-              <Grid item xs={6} lg={3}>
+              <Grid item xs={6} md={3}>
               <InputMask
                   mask="99.999-999"
                   color="secondary"
@@ -280,7 +280,7 @@ export default function Customer() {
                   )}
                 </InputMask>
               </Grid>
-              <Grid item xs={12} lg={6}>
+              <Grid item xs={12} md={6}>
                 <TextField
                   color="secondary"
                   variant="outlined"
@@ -296,7 +296,7 @@ export default function Customer() {
                   helperText={formik.touched.neighborhood && formik.errors.neighborhood}
                 />
               </Grid>
-              <Grid item xs={12} lg={5}>
+              <Grid item xs={12} md={5}>
                 <InputMask
                   mask="(99) 9999-9999"
                   color="secondary"
@@ -320,7 +320,7 @@ export default function Customer() {
                   )}
                 </InputMask>
               </Grid>
-              <Grid item xs={12} lg={5}>
+              <Grid item xs={12} md={5}>
                 <TextField
                   color="secondary"
                   variant="outlined"

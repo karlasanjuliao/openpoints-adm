@@ -497,7 +497,7 @@ const ExperienceForm = () => {
           <form noValidate onSubmit={formik.handleSubmit}>
             <Grid container alignItems="flex-start" spacing={2}>
               {isSystemAdmin && (
-                <Grid item xs={12} lg={6}>
+                <Grid item xs={12} md={6}>
                     <TextField
                       color="secondary"
                       variant="outlined"
@@ -531,7 +531,7 @@ const ExperienceForm = () => {
                     </TextField>
                 </Grid>
               )}
-              <Grid item xs={12} lg={6}>
+              <Grid item xs={12} md={6}>
                 {!id || (id && campaignsList && campaignsList.length > 0 && formik.values.campaignId) ? (
                   <TextField
                     color="secondary"
@@ -622,7 +622,7 @@ const ExperienceForm = () => {
                 />
               </Grid>
 
-              <Grid item xs={12} lg={3}>
+              <Grid item xs={12} md={3}>
                 <TextField
                   color="secondary"
                   variant="outlined"
@@ -644,7 +644,7 @@ const ExperienceForm = () => {
                   helperText={formik.touched.qtParticipants && formik.errors.qtParticipants}
                 />
               </Grid>
-              <Grid item xs={12} lg={9}>
+              <Grid item xs={12} md={9}>
                 <TextField
                   color="secondary"
                   variant="outlined"
@@ -661,7 +661,7 @@ const ExperienceForm = () => {
                 />
               </Grid>
 
-              <Grid item xs={12} lg={6}>
+              <Grid item xs={12} md={6}>
                 {!id || (id && experienceTypesList && experienceTypesList.length > 0 && formik.values.experienceTypeId) ? (
                   <TextField
                     color="secondary"
@@ -696,7 +696,7 @@ const ExperienceForm = () => {
                   </TextField>
                 ) : <CircularProgress color="inherit" size={20} />}
               </Grid>
-              <Grid item xs={12} lg={6}>
+              <Grid item xs={12} md={6}>
                 <TextField
                   color="secondary"
                   variant="outlined"
@@ -730,7 +730,7 @@ const ExperienceForm = () => {
                 </TextField>
               </Grid>
 
-              <Grid item xs={12} lg={3}>
+              <Grid item xs={12} md={3}>
                 <TextField
                   color="secondary"
                   variant="outlined"
@@ -747,7 +747,7 @@ const ExperienceForm = () => {
                   helperText={formik.touched.duration && formik.errors.duration}
                 />
               </Grid>
-              <Grid item xs={12} lg={3}>
+              <Grid item xs={12} md={3}>
                 <TextField
                   color="secondary"
                   variant="outlined"
@@ -777,7 +777,7 @@ const ExperienceForm = () => {
                   </MenuItem>
                 </TextField>
               </Grid>
-              <Grid item xs={12} lg={3}>
+              <Grid item xs={12} md={3}>
                 <TextField
                   color="secondary"
                   variant="outlined"
@@ -808,7 +808,7 @@ const ExperienceForm = () => {
                 </TextField>
               </Grid>
 
-              <Grid item xs={12} lg={6}>
+              <Grid item xs={12} md={6}>
                 <TextField
                   color="secondary"
                   variant="outlined"
@@ -827,7 +827,7 @@ const ExperienceForm = () => {
                   helperText={formik.touched.whatIsIncluded && formik.errors.whatIsIncluded}
                 />
               </Grid>
-              <Grid item xs={12} lg={6}>
+              <Grid item xs={12} md={6}>
                 <TextField
                   color="secondary"
                   variant="outlined"
@@ -867,7 +867,7 @@ const ExperienceForm = () => {
                 />
               </Grid>
 
-              <Grid item xs={6} lg={2}>
+              <Grid item xs={6} md={2}>
                 {!id || (id && formik.values.originalPrice) ? (
                   <CurrencyField
                     color="secondary"
@@ -879,14 +879,13 @@ const ExperienceForm = () => {
                     value={formik.values.originalPrice || ''}
                     name="originalPrice"
                     id="originalPrice"
-                    autoComplete="originalPrice"
                     label="Preço de"
                     error={formik.touched.originalPrice && Boolean(formik.errors.originalPrice)}
                     helperText={formik.touched.originalPrice && formik.errors.originalPrice}
                   />
                 ) : <CircularProgress color="inherit" size={20} />}
               </Grid>
-              <Grid item xs={6} lg={2}>
+              <Grid item xs={6} md={2}>
                 {!id || (id && formik.values.price) ? (
                   <CurrencyField
                     color="secondary"
@@ -898,14 +897,13 @@ const ExperienceForm = () => {
                     value={formik.values.price || ''}
                     name="price"
                     id="price"
-                    autoComplete="price"
                     label="Preço *"
                     error={formik.touched.price && Boolean(formik.errors.price)}
                     helperText={formik.touched.price && formik.errors.price}
                   />
                 ) : <CircularProgress color="inherit" size={20} />}
               </Grid>
-              <Grid item xs={12} lg={8}>
+              <Grid item xs={12} md={8}>
                 <Autocomplete
                   id="city"
                   open={cityOptions.length > 0}
@@ -951,7 +949,7 @@ const ExperienceForm = () => {
                 />
               </Grid>
 
-              <Grid item xs={12} lg={6}>
+              <Grid item xs={12} md={6}>
                 <TextField
                   color="secondary"
                   variant="outlined"
@@ -967,7 +965,7 @@ const ExperienceForm = () => {
                   helperText={formik.touched.localization && formik.errors.localization}
                 />
               </Grid>
-              <Grid item xs={6} lg={3}>
+              <Grid item xs={6} md={3}>
                 <TextField
                   label="Mostrar a partir de: *"
                   type="date"
@@ -985,7 +983,7 @@ const ExperienceForm = () => {
                   }}
                 />
               </Grid>
-              <Grid item xs={6} lg={3}>
+              <Grid item xs={6} md={3}>
                 <TextField
                   label="Até: *"
                   type="date"
@@ -1005,7 +1003,7 @@ const ExperienceForm = () => {
               </Grid>
 
               <Grid container item alignItems="center">
-                <Grid item xs={12} lg={3}>
+                <Grid item xs={12} md={3}>
                   <FormControlLabel
                     control={
                       <Checkbox
@@ -1016,10 +1014,10 @@ const ExperienceForm = () => {
                         name="freeCancel"
                       />
                     }
-                    label="Cancelamento grátis?"
+                    label="Cancelamento grátis"
                   />
                 </Grid>
-                <Grid item xs={12} lg={9}>
+                <Grid item xs={12} md={9}>
                   <TextField
                     color="secondary"
                     variant="outlined"
@@ -1057,10 +1055,10 @@ const ExperienceForm = () => {
                       const error = formik.errors.experienceDates && formik.errors.experienceDates[index]
                       return (
                       <Grid container item key={index} alignItems='center'>
-                        <Grid container item xs={12} lg={4} justifyContent='center'>
+                        <Grid container item xs={12} md={4} justifyContent='center'>
                           <Chip className={classes.chip} label={index + 1} />
                         </Grid>
-                        <Grid container item xs={12} lg={8} justifyContent={isMobile ? 'space-between' : 'space-evenly'} alignItems='baseline'>
+                        <Grid container item xs={12} md={8} justifyContent={isMobile ? 'space-between' : 'space-evenly'} alignItems='baseline'>
                           <TextField
                             label="Data *"
                             type="date"
@@ -1128,7 +1126,7 @@ const ExperienceForm = () => {
                   </Divider>
                 </div>
                 <Grid container item alignItems="center">
-                  <Grid item lg={3}>
+                  <Grid item md={3}>
                     <Button
                       variant="outlined"
                       color="primary"
@@ -1140,7 +1138,7 @@ const ExperienceForm = () => {
                     </Button>
                     <input type="file" multiple ref={uploadImageRef} accept="image/jpeg" onChange={handleImagesToUpload} onClick={(event) => { event.currentTarget.value = null }} hidden />
                   </Grid>
-                  <Grid container item lg={9}>
+                  <Grid container item md={9}>
                     {imageList ? (
                       imageList.length > 0 ? (
                         <ImageList cols={5} rowHeight={164}>

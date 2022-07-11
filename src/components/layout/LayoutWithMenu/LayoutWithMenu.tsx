@@ -121,6 +121,7 @@ export default function LayoutWithMenuComponent({ children }) {
     { name: 'Empresas', to: '/cadastros/empresas' },
     { name: 'Usuários', to: `/cadastros/usuarios?customerId=${authUser && authUser.customerId}` },
     { name: 'Experiências', to: `/cadastros/experiencias` },
+    { name: 'Cupons de desconto', to: `/cadastros/cupons-desconto` },
   ];
 
   const handleDrawerOpen = () => {
@@ -190,6 +191,11 @@ export default function LayoutWithMenuComponent({ children }) {
                         <Link href={'/cadastros/campanhas'} passHref shallow={false}>
                           <MenuItem button component="a">
                             Campanhas
+                          </MenuItem>
+                        </Link>
+                        <Link href={'/cadastros/cupons-desconto'} passHref shallow={false}>
+                          <MenuItem button component="a">
+                            Cupons de desconto
                           </MenuItem>
                         </Link>
                       </MenuList>

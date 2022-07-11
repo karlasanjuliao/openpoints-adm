@@ -42,13 +42,13 @@ const CampaignService: Service<CampaignMethods> = {
     return response.data
   },
 
-  getAllCampaigns: async ({ customerId }, token) => {
-    const response = await CampaignService.api.get(`/campaign?customerId=${customerId}`, {
+  getAllCampaigns: async (params, token) => {
+    const response = await CampaignService.api.get(`/campaign?${params?.customerId ? `customerId=${params?.customerId}&` : ''}${params?.own ? `own=${params?.own}` : ''}`, {
       headers: getAuthHeaders(token)
     })
     return response.data
   },
-  
+
   getCampaignById: async ({ id }, token) => {
     const response = await CampaignService.api.get(`/campaign/${id}`, {
       headers: getAuthHeaders(token)

@@ -182,10 +182,10 @@ const ShowcaseForm = () => {
       storage.ref(`campaign/${campaignCode}`).listAll().then(async imageRefs => {
         const storagedImages = await Promise.all(imageRefs.items.map(async (ref) => {
           const source = await ref.getDownloadURL()
-          console.log('veio do firebase', {
-            id: Number(ref.name.replace(/\D/g, '')),
-            source
-          })
+          // console.log('veio do firebase', {
+          //   id: Number(ref.name.replace(/\D/g, '')),
+          //   source
+          // })
           return ({
             id: Number(ref.name.replace(/\D/g, '')),
             source

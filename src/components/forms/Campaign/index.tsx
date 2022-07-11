@@ -1,7 +1,9 @@
 import {
   Button,
+  Checkbox,
   Container,
   createStyles,
+  FormControlLabel,
   Grid,
   IconButton,
   makeStyles,
@@ -74,6 +76,7 @@ export default function CampaignForm() {
   const { notify } = useNotification()
 
   const initialValues: any = {
+    ownCampaign: false,
     customerId: '',
     name: '',
     campaignCode: '',
@@ -101,7 +104,6 @@ export default function CampaignForm() {
     initialValues: initialValues,
     validationSchema: formSchema,
     onSubmit: async (values) => {
-      console.log('campaign final -> ', values)
       try {
         if (id) {
           await editCampaign({
@@ -168,7 +170,21 @@ export default function CampaignForm() {
         <Paper className={classes.form} elevation={3}>
           <form noValidate onSubmit={formik.handleSubmit}>
             <Grid container alignItems="flex-start" spacing={2}>
-              <Grid item xs={12} lg={9}>
+              <Grid item xs={12} md={12}>
+                  <FormControlLabel
+                    control={
+                      <Checkbox
+                        checked={formik.values.ownCampaign}
+                        onChange={event =>
+                          formik.setFieldValue("ownCampaign", event.target.checked)
+                        }
+                        name="ownCampaign"
+                      />
+                    }
+                    label="Campanha própria"
+                  />
+                </Grid>
+              <Grid item xs={12} md={9}>
                 <TextField
                   color="secondary"
                   variant="outlined"
@@ -200,7 +216,7 @@ export default function CampaignForm() {
                   ))}
                 </TextField>
               </Grid>
-              <Grid item xs={12} lg={3}>
+              <Grid item xs={12} md={3}>
                 <TextField
                   color="secondary"
                   variant="outlined"
@@ -217,7 +233,7 @@ export default function CampaignForm() {
                   helperText={formik.touched.campaignCode && formik.errors.campaignCode}
                 />
               </Grid>
-              <Grid item xs={12} lg={9}>
+              <Grid item xs={12} md={9}>
                 <TextField
                   color="secondary"
                   variant="outlined"
@@ -233,7 +249,7 @@ export default function CampaignForm() {
                   helperText={formik.touched.name && formik.errors.name}
                 />
               </Grid>
-              <Grid item xs={12} lg={3}>
+              <Grid item xs={12} md={3}>
                 <TextField
                   color="secondary"
                   variant="outlined"
@@ -258,7 +274,7 @@ export default function CampaignForm() {
                   <Chip className={classes.chip} label="Configuração" />
                 </Divider>
               </div>
-              <Grid item xs={12} lg={4}>
+              <Grid item xs={12} md={4}>
                 <TextField
                   color="secondary"
                   variant="outlined"
@@ -275,7 +291,7 @@ export default function CampaignForm() {
                   value={formik.values.campaignConfig.webpremiosClientId}
                 />
               </Grid>
-              <Grid item xs={12} lg={8}>
+              <Grid item xs={12} md={8}>
                 <TextField
                   color="secondary"
                   variant="outlined"
@@ -292,7 +308,7 @@ export default function CampaignForm() {
                   value={formik.values.campaignConfig.webpremiosScope}
                 />
               </Grid>
-              <Grid item xs={12} lg={8}>
+              <Grid item xs={12} md={8}>
                 <TextField
                   color="secondary"
                   variant="outlined"
@@ -309,7 +325,7 @@ export default function CampaignForm() {
                   value={formik.values.campaignConfig.redirectUrlAuth}
                 />
               </Grid>
-              <Grid item xs={12} lg={4}>
+              <Grid item xs={12} md={4}>
                 <TextField
                   color="secondary"
                   variant="outlined"

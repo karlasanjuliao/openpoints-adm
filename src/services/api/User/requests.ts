@@ -17,3 +17,16 @@ export type EditUserRequest = User
 export type DeleteUserRequest = {
   id: number
 }
+
+enum BalanceActionTypes {
+  credit,
+  debit,
+  refund
+}
+
+export type BalanceRequest = {
+  type: BalanceActionTypes
+  userId: number
+  value: number
+  description: string
+}

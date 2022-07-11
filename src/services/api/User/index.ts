@@ -9,7 +9,8 @@ import {
   GetUserByIdRequest,
   CreateUserRequest,
   EditUserRequest,
-  DeleteUserRequest
+  DeleteUserRequest,
+  BalanceRequest
 } from './requests'
 import { GetUsersResponse, GetProfilesResponse } from './responses'
 
@@ -30,6 +31,7 @@ type UserMethods = {
     DeleteUserRequest
   >
   getProfiles: ApiServiceMethod<GetProfilesResponse, string>
+  balanceAction: ApiServiceMethod<any, BalanceRequest>
 }
 
 const baseURL = process.env.NEXT_PUBLIC_BACKEND_URL
@@ -90,6 +92,14 @@ const UserService: Service<UserMethods> = {
       '/profile',
       { headers: getAuthHeaders(token) }
     )
+    return response.data
+  },
+
+  balanceAction: async (request, token) => {
+    const { type, ...data } = request
+    const response = await UserService.api.post(`/user/points/${type}`, data, {
+      headers: getAuthHeaders(token)
+    })
     return response.data
   },
 }
