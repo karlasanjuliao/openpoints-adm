@@ -31,7 +31,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <SafeHydrate>
       <Head>
-        <title>Admin | Destino Férias</title>
+        <title>Admin | OpenPoints</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
       </Head>
       <ThemeProvider theme={theme}>

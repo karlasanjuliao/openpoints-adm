@@ -103,20 +103,26 @@ export default function LoginPage() {
           sm={4}
           md={7}
           style={{
-            backgroundImage: 'url(/img/bg.png)',
+            backgroundImage: 'url(/img/background_OpenPoints.png)',
             backgroundRepeat: 'no-repeat',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
+            minWidth: '100%'
           }}
         />
-        <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square style={{ backgroundColor: '#d7d7d7'  }}>
-          <Box
+        <Box
             sx={{
               my: 8,
               mx: 4,
               display: 'flex',
               flexDirection: 'column',
               alignItems: 'center',
+              position: 'absolute',
+              right: '40px',
+              top: '40px',
+              borderRadius: '12px',
+              margin: '0px',
+              padding: '60px 120px'
             }}
           >
             <Image src="/img/logo-color.png" alt="Logo" width="220" height="40" />
@@ -189,7 +195,6 @@ export default function LoginPage() {
               </Button>
             </Link>
           </Box>
-        </Grid>
       </Grid>
   );
 }
